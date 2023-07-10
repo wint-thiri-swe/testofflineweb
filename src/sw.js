@@ -2,13 +2,13 @@
 const CACHE_NAME = 'cache-v1';
 
 const CACHE_ASSETS = [
-    // '/',
+    // '/src',
     './index.html',
-    './css/main.css',
-    './js/main.js',
-    './asset/bus_map_preview.png',
-    './asset/font/NotoSans-Regular.ttf',
-    './asset/font/NotoSans-Bold.ttf'
+    // './css/main.css',
+    // './js/main.js',
+    // './asset/bus_map_preview.png',
+    // './asset/font/NotoSans-Regular.ttf',
+    // './asset/font/NotoSans-Bold.ttf'
 ];
 
 
@@ -23,7 +23,6 @@ self.addEventListener('install', event => {
 
 self.addEventListener('activate', event => {
     console.log('SW : activated');
-
     event.waitUntil(
         caches.keys().then(cacheNames => {
             return Promise.all(
@@ -39,6 +38,8 @@ self.addEventListener('activate', event => {
 })
 
 self.addEventListener('fetch', event => {
+    console.log('fetching');
+    console.log(event);
     event.respondWith(
         fetch(event.request).catch(() => caches.match(event.request))
         // caches.match(event.request).then(response => {
