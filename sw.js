@@ -3,6 +3,7 @@ self.addEventListener('install', event => {
         caches.open('sw-cache').then(cache => {
             return cache.addAll([
                 // '/',
+                './index.html',
                 './css/main.css',
                 './js/main.js',
                 './asset/bus_map_preview.png',
