@@ -3979,9 +3979,3 @@ function loadJson() {
         loadjsontimeout = setTimeout(initialSetting(), 4000);
     });
 }
-
-function initServiceWorker(){
-    if("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("sw.js");
-    }
-}

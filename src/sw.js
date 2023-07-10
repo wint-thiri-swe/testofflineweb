@@ -2,10 +2,24 @@
 const CACHE_NAME = 'cache-v1';
 
 const CACHE_ASSETS = [
-    // '/src',
+    // '../src',
     './index.html',
-    // './css/main.css',
-    // './js/main.js',
+    './css/main.css',
+    './css/admincss.css',
+    './css/font.css',
+    './css/img.css',
+    './css/bootstrap.min.css',
+    './css/style.css',
+    './css/reset.css',
+    './css/swiper-bundle.min.css',
+    './js/bootstrap.bundle.min.js',
+    './js/gsap.min.js',
+    './js/img.js',
+    './js/jquery-3.5.1.min.js',
+    './js/swiper-bundle.min.js',
+    './js/main.js',
+    './MyLoader.js',
+    '../commonfile/',
     // './asset/bus_map_preview.png',
     // './asset/font/NotoSans-Regular.ttf',
     // './asset/font/NotoSans-Bold.ttf'
@@ -23,28 +37,25 @@ self.addEventListener('install', event => {
 
 self.addEventListener('activate', event => {
     console.log('SW : activated');
-    event.waitUntil(
-        caches.keys().then(cacheNames => {
-            return Promise.all(
-                cacheNames.map(cache => {
-                    if(cache  !== CACHE_NAME) {
-                        console.log('delete old cache');
-                        caches.delete(cache);
-                    }
-                })
-            )
-        } )
-    )
+    // event.waitUntil(
+    //     caches.keys().then(cacheNames => {
+    //         return Promise.all(
+    //             cacheNames.map(cache => {
+    //                 if(cache  !== CACHE_NAME) {
+    //                     console.log('delete old cache');
+    //                     caches.delete(cache);
+    //                 }
+    //             })
+    //         )
+    //     } )
+    // )
 })
 
 self.addEventListener('fetch', event => {
-    console.log('fetching');
-    console.log(event);
     event.respondWith(
-        fetch(event.request).catch(() => caches.match(event.request))
-        // caches.match(event.request).then(response => {
-        //     return response || fetch(event.request);
-        // })
+        caches.match(event.request).then(response => {
+            return response || fetch(event.request);
+        })
     );
 });
 
