@@ -1,6 +1,7 @@
 
 const CACHE_NAME = 'cache-v1';
 
+
 const CACHE_ASSETS = [
     // '../src',
     './index.html',
@@ -24,6 +25,8 @@ const CACHE_ASSETS = [
     // './asset/font/NotoSans-Regular.ttf',
     // './asset/font/NotoSans-Bold.ttf'
 ];
+
+$.getJSON("../commonfile/data/kiosk_content.json", function(data) {});
 
 
 self.addEventListener('install', event => {
