@@ -1,0 +1,19 @@
+{
+  "name": "westgateprogramtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/eltov/westgateprogram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/eltov/westgateprogram#readme",
+  "dependencies": {
+    "node-gyp": "^9.4.0"
+  }
+}

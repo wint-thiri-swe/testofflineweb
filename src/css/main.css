@@ -1,0 +1,412 @@
+html{ width:-webkit-fill-available; height:-webkit-fill-available;overflow: hidden;}
+
+body{ width:-webkit-fill-available; height:100%; overflow-y:hidden;}
+
+body::-webkit-scrollbar, .container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+.header { width:100%; height:9.375%;display: flex;background: #F5F5F5;}
+.header .hleft { width: 50%;height: 100%;display: flex;}
+.header .hleft .logoholder { padding: 35px 0px 0px 34px; margin-right: 5px;}
+.header .hleft .logoholder img { height: 84px;}
+.header .hleft .titleholder { display: flex;align-items: center;justify-content: center;}
+.header .hleft .titleholder #pageTitle { margin: 0;font-family: NotoMedium;font-style: normal;font-size: 56px;line-height: 84px;letter-spacing: -0.02em;color: #222222;}
+.header .hright { width: 50%;height: 100%;display: flex;}
+.header .hright .optimebox {display: flex;padding: 57px 0px 0px 0px;margin: 0px 0px 0px 91px;}
+.header .hright .optimebox .logoholder {display: flex;padding-right: 8px;}
+.header .hright .optimebox .detailbox { padding-right: 12px;height: fit-content;border-right: 1px solid #222222;}
+.header .hright .optimebox .detailbox .done { margin: 0;font-family: Noto;font-style: normal;font-weight: 400;font-size: 14px;line-height: 21px;letter-spacing: 0.0120202px;color: #222222;mix-blend-mode: normal;opacity: 0.8;}
+.header .hright .optimebox .detailbox .dtwo { margin: 0;font-family: 'NotoBold';font-style: normal;font-weight: 700;font-size: 16px;line-height: 24px;color: #222222;}
+.header .hright .wifibox { display: flex;padding: 57px 0px 0px 12px;}
+.header .hright .wifibox .logoholder { padding-right: 8px;}
+.header .hright .wifibox .detailbox .done { margin: 0;font-family: Noto;font-style: normal;font-weight: 400;font-size: 14px;line-height: 21px;letter-spacing: 0.0120202px;color: #222222;mix-blend-mode: normal;opacity: 0.8;}
+.header .hright .wifibox .detailbox .dtwo { margin: 0;font-family: 'NotoBold';font-style: normal;font-weight: 700;font-size: 16px;line-height: 24px;color: #222222;}
+.header .hright .wifipassbox { display: flex;padding: 57px 0px 0px 27px;}
+.header .hright .wifipassbox .detailbox .done { margin: 0;font-family: Noto;font-style: normal;font-weight: 400;font-size: 14px;line-height: 21px;letter-spacing: 0.0120202px;color: #222222;mix-blend-mode: normal;opacity: 0.8;}
+.header .hright .wifipassbox .detailbox .dtwo { margin: 0;font-family: 'NotoBold';font-style: normal;font-weight: 700;font-size: 16px;line-height: 24px;color: #222222;}
+
+.content { width:100%; height:74.0625%;background: #F5F5F5;}
+.accessibleholder #touchpad {width: 514px;height: 428px;background-color: #232326;border-radius: 10px;}
+.accessibleholder #pointer {width: 20px;height: 20px;background-color: blue;position: absolute;top: 0;left: 0;border-radius: 50%;}
+.accessibleholder #custommouse {touch-action: none;position: absolute;pointer-events: auto;cursor: auto;user-select: none;}
+.accessibleholder #toucharea {touch-action: none;user-select: none;width: 100%;height: 250px;cursor: pointer;}
+.accessibleholder #header {height: 50px;background-color: #000;border-radius: 10px;}
+.accessibleholder .buttons {display: flex;gap: 8px;margin-left: 26px;}
+.accessibleholder #leftclick,.accessibleholder #rightclick {width: 218px;height: 78px;background-color: #000;}
+
+.content .wgPage { width: 100%;height: 100%;display: flex;flex-direction: column;}
+.content .wgModal { position: absolute;width: 100%;height: 100%;top: 0;z-index: 100;display: flex;justify-content: center;align-items: center;}
+
+#wgScreenSaver { flex-wrap: wrap; z-index: 100; position: absolute; top:0; height: 100%;}
+#wgScreenSaver .swiperbox {position: absolute; top:0; height: 90%; max-height: 100%;min-height: 0;min-width: 0;max-width: 100vw; width: 100%;}
+#wgScreenSaver .swiperbox .swiper {height: 100%};
+#wgScreenSaver #SwiperScreenSaver #swiperScreensaver .swiper-wrapper {  max-height: 100%;height: 100%;display: flex;}
+#wgScreenSaver #SwiperScreenSaver #swiperScreensaver .swiper-wrapper .swiper-slide {  width: auto;flex-shrink: 0;display: block;height: auto;max-height: 100%; background-color: #000000;}
+#wgScreenSaver #SwiperScreenSaver #swiperScreensaver .swiper-wrapper .swiper-slide img {width: 100%; height: 100%;object-fit: fill;}
+#wgScreenSaver #ScreenSaverTouch {position: absolute; top: 90%; height: 10%; width: 100%; display: flex; justify-content: center; align-items: center; background-color: #ebdfcb;}
+#wgScreenSaver #ScreenSaverTouch #text {font-size: 44px; font-weight: bold; letter-spacing: 0.55px; font-family: 'NotoBold'; color: #222222;}
+
+#wgHome .boxdt { display: flex;align-items: center;padding-top: 100px;padding-left: 88px;}
+#wgHome .boxdt p {margin: 0;padding-left: 8px;font-family: 'NotoBold';font-style: normal;font-weight: 700;font-size: 20px;line-height: 28px;color: #222222;}
+#wgHome #SwiperHomePage { height: 1218px; width: 100%; margin-top: 16px;}
+#wgHome #SwiperHomePage .swiper-wrapper .swiper-slide {width: 896px;padding: 16px 88px 0px 88px;}
+/* #wgHome #swiperHome { padding: 16px 88px 0px 88px;height: 1250px;} */
+#wgHome #swiperHome .itemHome {width:100%;height: 1168px;display: flex;flex-direction: column;background: #ffffff;border-left:8px solid #006EB8;}
+#wgHome #swiperHome .itemHome .imgholder { display: flex;justify-content: center;align-items: center;}
+#wgHome #swiperHome .itemHome .imgholder img { width: 778px;height: 648px; object-fit: contain;}
+#wgHome #swiperHome .itemHome .titleholder { margin: 25px 59px 0px 59px;}
+#wgHome #swiperHome .itemHome .titleholder .title { margin: 0;font-family: 'NotoBold';font-style: normal;font-weight: 700;font-size: 36px;line-height: 50px;letter-spacing: -0.01em;color: #222222;text-transform: uppercase; word-wrap: break-word; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;}
+#wgHome #swiperHome .itemHome .detailholder { margin: 38px 59px 0px 59px;display: flex; height: 110px; border-bottom: solid 2px #BBE3FA; align-items: end;}
+#wgHome #swiperHome .itemHome .detailholder .datelocationbox {height: 53px;}
+#wgHome #swiperHome .itemHome .detailholder .datelocationbox .dateholder { display: flex;align-items: center;}
+#wgHome #swiperHome .itemHome .detailholder .datelocationbox .dateholder .daterange { margin: 0;font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 20px;line-height: 30px;letter-spacing: -0.01em;color: #222222;padding-left: 8px;}
+#wgHome #swiperHome .itemHome .detailholder .datelocationbox .locationholder { display: flex;align-items: center;margin-top: 6px;}
+#wgHome #swiperHome .itemHome .detailholder .datelocationbox .locationholder .location { margin: 0;font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 20px;line-height: 30px;letter-spacing: -0.01em;color: #222222;padding-left: 8px;}
+#wgHome #swiperHome .itemHome .detailholder .qrcodeholder { margin-left: auto;position: relative;bottom: 25px;}
+#wgHome #swiperHome .itemHome .detailholder .qrcodeholder .qrholder { padding: 10px;border: 2px solid #BBE3FA;}
+#wgHome #swiperHome .itemHome .detailholder .qrcodeholder .qrholder .qrcode {width: 80px;height: 80px;}
+#wgHome #swiperHome .itemHome .detailholder .qrcodeholder .qrtext { margin: 8px 0px 0px 0px;font-family: 'NotoBold';font-style: normal;font-weight: 700;font-size: 9px;line-height: 13px;text-align: center;color: #000000;}
+#wgHome #swiperHome .itemHome .descriptionholder {margin: 24px 59px 0px 59px;height: 218px;overflow-y: scroll;font-family:Noto; font-size: 18px; line-height: 28px; color: #222222;}
+
+#wgFloorGuide .webgl-wrapper {width: 100%;height:1000px;background: #FFF;}
+#wgFloorGuide .floorlevelholder { position: absolute;z-index: 100;}
+#wgFloorGuide .floorlevelholder #floorleveltxt { font-family: NotoBold;font-style: normal;font-weight: 400;font-size: 96px;line-height: 84px;letter-spacing: -0.02em;color: #222222;text-shadow: 0px 0px 15px white;margin: 45px 0px 0px 65px;}
+#wgFloorGuide .toplayout { width: 100%;height: 130px;display: flex;}
+#wgFloorGuide .toplayout .actionmenu { width: 30%;display: flex;padding: 28px 0px 0px 72px;}
+#wgFloorGuide .toplayout .actionmenu .action { padding-right: 16px;display: flex;flex-direction: column;align-items: center;}
+#wgFloorGuide .toplayout .actionmenu .action .actiontxt { margin: 0;margin-top: 4px;font-family: 'Noto';font-style: normal;font-weight: 300;font-size: 10px;line-height: 15px;text-align: center;color: #000000;}
+#wgFloorGuide .toplayout .detailtext { width: 50%;display: flex;flex-direction: column;align-items: center;padding-top: 28px;}
+#wgFloorGuide .toplayout .detailtext .source { display: flex;align-items: center;}
+#wgFloorGuide .toplayout .detailtext .source #sourcelocation { margin: 0;padding-left: 8px;font-family: 'Noto';font-style: normal;font-weight: 400;font-size: 12px;line-height: 18px;text-align: center;color: #000000;}
+#wgFloorGuide .toplayout .detailtext .destination { display: flex;align-items: center;padding-top: 10px;}
+#wgFloorGuide .toplayout .detailtext .destination #destinationlocation { margin: 0;padding-left: 8px;font-family: 'Noto';font-style: normal;font-weight: 400;font-size: 12px;line-height: 18px;text-align: center;color: #000000;}
+#wgFloorGuide .toplayout .yourlocation { width: 10%;display: flex;justify-content: center;padding-top: 21px;}
+#wgFloorGuide .toplayout .mobileqrcode {width: 10%; margin-right: 42px; padding-top: 10px;}
+#wgFloorGuide .toplayout .yourlocation .buttongroup { display: flex;flex-direction: column;align-items: center;}
+/* #wgFloorGuide .toplayout .yourlocation .buttongroup .btn { width: 56px;height: 56px;border-radius: 50px;background-color: white;border: 2px solid #BBE3FA;display: flex;justify-content: center;align-items: center;} */
+#wgFloorGuide .toplayout .yourlocation .buttongroup .btntext { font-family: 'Noto';font-style: normal;font-weight: 400;font-size: 12px;line-height: 18px;text-align: center;color: #000000;margin: 0;padding-top: 8px;}
+#wgFloorGuide .toplayout .mobileqrcode .buttongroup {display: flex; flex-direction: column; justify-content: center; align-items: center;}
+#wgFloorGuide .toplayout .mobileqrcode .buttongroup .qrcodeholder {display: flex; justify-content: center; width: 100px; height: 100px; background: #FFFFFF; align-items: center;border: 2px solid #BBE3FA;}
+#wgFloorGuide .toplayout .mobileqrcode .buttongroup .qrcode {background-color: #FFFFFF;}
+#wgFloorGuide .toplayout .mobileqrcode .buttongroup .qrtext { font-family: NotoBold;font-style: normal;font-weight: 700;font-size: 9px;line-height: 13px;text-align: center; color: #000000;margin: 0;padding-top: 8px;}
+#wgFloorGuide .middlelayout {  width: 100%;padding-top: 18px; display: flex; flex-direction: column; align-items: center;}
+#wgFloorGuide .middlelayout::-webkit-scrollbar {display:none}
+#wgFloorGuide .middlelayout .amenitiesmenu::-webkit-scrollbar {display:none}
+#wgFloorGuide .middlelayout .amenitiesmenu { display: flex; width: 858px;overflow: scroll; gap: 12px; justify-content: center;}
+#wgFloorGuide .middlelayout .amenitiesmenu .amenities {width: 68px;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+#wgFloorGuide .middlelayout .amenitiesmenu .amenities .iconholder { width: 48px;height: 48px;display: flex;justify-content: center;align-items: center;border-radius: 50px;border: 2px solid #BBE3FA;background-color: white;}
+#wgFloorGuide .middlelayout .amenitiesmenu .amenities .amenitiestxt { font-family: 'Noto';font-style: normal;font-weight: 400;font-size: 12px;line-height: 18px;text-align: center;color: #000000;margin: 0;padding-top: 8px;min-height: 42px;}
+#wgFloorGuide .bottomlayout {margin: auto 0px;}
+#wgFloorGuide .bottomlayout .lvlbtngroup { display: flex;justify-content: center;align-items: center;}
+#wgFloorGuide .bottomlayout .lvlbtngroup .lvlbtn { width: 64px;height: 64px;display: flex;justify-content: center;align-items: center;border: 2px solid #BBE3FA;background-color: white;margin: 0px 12px;}
+#wgFloorGuide .bottomlayout .lvlbtngroup .lvlbtn .lvltxt { font-family: 'Noto';font-style: normal;font-weight: 400;font-size: 26px;text-align: center;color: #222222;margin: 0;}
+#wgFloorGuide .bottomlayout .updownicon { display: flex;justify-content: center;align-items: center;}
+#wgFloorGuide .bottomlayout .updownicon img { width:70px;height:70px;}
+
+
+#wgWayfindresult {}
+#wgWayfindresult .wfresult {width: 218px; height: 640px; position: absolute; top: 378px;position: absolute; overflow-x: hidden; right: 42px;display:flex; flex-direction: column; justify-content: center; align-items: center;}
+#wgWayfindresult .wfresult .wfresultcontainer {width: 200px; height: 640px; overflow-x: hidden; overflow-y: scroll;border-left: 4px solid #006EB8; background-color: rgba(255, 255, 255, 1);box-shadow: 0px 8px 16px rgba(209, 184, 179, 0.2); }
+#wgWayfindresult .wfresult .wfresultcontainer::-webkit-scrollbar {display: none;}
+#wgWayfindresult .wfresult::-webkit-scrollbar {display: none;}
+#wgWayfindresult .wfresult .wftitle {display: flex; justify-content: center; padding-top: 24px; padding-bottom: 16px;}
+#wgWayfindresult .wfresult .wftitle p {font-family: 'NotoBold'; font-size: 18px;}
+#wgWayfindresult .wfresult #wfhideicon, #wgWayfindresult .wfresult #wfshowicon {width: 36px; height: 36px; left:-91px; position: relative; top: -18px;}
+.showWF {transform: translate(0px 0px);}/* toggle class*/
+#wgWayfindresult .wfresult .wffloorcontainer {padding:24px; height: 557px; overflow-y: scroll;}
+#wgWayfindresult .wfresult .wffloorcontainer::-webkit-scrollbar {display: none;}
+#wgWayfindresult .wfresult .wffloorcontainer #wffloorstep {margin-bottom: 14px;}
+#wgWayfindresult .wfresult .wffloorcontainer #wffloorstep #wfdesc {display: flex; gap: 5px;}
+#wgWayfindresult .wffloorcontainer #wfdownarrow {display: flex; justify-content: center; margin-top: 16px;}
+#wgWayfindresult .wffloorcontainer #floor {margin-bottom: 8px; font-family: 'NotoBold'; font-size: 24px;}
+#wgWayfindresult .wffloorcontainer #wfdesc {font-family: 'Noto'; font-size: 16px;}
+#wgWayfindresult .wfdetail {height: 144px; width: 100%;flex-direction: row;display: flex;align-items: center; position: absolute; top: 1060px}
+#wgWayfindresult .wfdetail .wflevel {margin-top:80px; width: 85%; display: flex; gap: 24px;align-items: center ;justify-content: center; overflow: auto; margin-left: 349px;}
+#wgWayfindresult .wfdetail .wflevel::-webkit-scrollbar {display: none;}
+#wgWayfindresult .wfdetail .wflevel #lvlbtncontainer {display: flex; gap: 24px; width: auto;}
+#wgWayfindresult .wfdetail .wflevel #lvlbtncontainer .lvlbtn {border-radius: 50%; width: 55px; height: 52px; background-color: white; border: 2px solid #BBE3FA; display: flex; justify-content: center; align-items: center;}
+#wgWayfindresult .wfdetail .wflevel .lvlbtn p {color: #006EB8; font-family: 'NotoBold'; font-size: 24px; margin-bottom: 0px;}
+
+
+#wgDirectory #SwiperDirectoryPage {min-height: 936px;}
+#wgDirectory #SwiperDirectoryPage #swiperDirectory {}
+#wgDirectory #SwiperDirectoryPage #swiperDirectory .swiper-wrapper { padding-bottom: 40px;}
+#wgDirectory #SwiperDirectoryPage #swiperDirectory .swiper-wrapper .swiper-slide { margin-top: 72px;}
+#wgDirectory #SwiperDirectoryPage #swiperDirectory .swiper-wrapper .swiper-slide .drow { display: flex;margin-left: 68px;margin-right: 68px;}
+#wgDirectory #SwiperDirectoryPage #swiperDirectory .swiper-wrapper .swiper-slide .drow .dcol { width: 424px;height: 150px;margin:28px 20px;}
+#wgDirectory #SwiperDirectoryPage #swiperDirectory .swiper-wrapper .swiper-slide .drow .dcol .dcard { width: 424px;height: 150px;background: white;border-left: 8px solid #006EB8;display: flex;}
+#wgDirectory #SwiperDirectoryPage #swiperDirectory .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardleft { width: 200px;height: 150px;}
+#wgDirectory #SwiperDirectoryPage #swiperDirectory .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardleft img {width: 200px; height: 150px;}
+#wgDirectory #SwiperDirectoryPage #swiperDirectory .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright { display: flex;flex-direction: column; flex: 0 0;}
+#wgDirectory #SwiperDirectoryPage #swiperDirectory .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright .shopnameholder { margin: auto 0px; overflow: scroll;}
+#wgDirectory #SwiperDirectoryPage #swiperDirectory .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright .shopnameholder::-webkit-scrollbar{display: none;}
+#wgDirectory #SwiperDirectoryPage #swiperDirectory .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright .shopnameholder .nametxt { font-family: NotoBold;font-style: normal;font-weight: 700;font-size: 18px;line-height: 27px;letter-spacing: -0.01em;color: #000000;margin: 0;padding-left: 16px; word-wrap: break-word; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;}
+#wgDirectory #SwiperDirectoryPage #swiperDirectory .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright .shopdetail { display: flex;width: 100%;margin-top: auto;margin-bottom: auto;}
+#wgDirectory #SwiperDirectoryPage #swiperDirectory .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright .shopdetail .shopunitholder { width: 134px;padding-left: 16px; display: flex; flex-direction: column; gap: 8px;} 
+#wgDirectory #SwiperDirectoryPage #swiperDirectory .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright .shopdetail .shopunitholder .unittxt { font-family: NotoMedium;font-style: normal;font-size: 18px;line-height: 27px;letter-spacing: -0.01em;color: #000000;margin: 0; word-wrap: break-word; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;}
+#wgDirectory #SwiperDirectoryPage #swiperDirectory .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright .shopdetail .wayfindingbtn { width: 48px;height: 48px;padding-left: 10px;}
+#wgDirectory #SwiperDirectoryPage #swiperDirectory .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright .shopdetail .wayfindingbtn .btnholder { width: 48px;height: 48px;background: #CAD401;display: flex;align-items: center;justify-content: center;border-radius: 50px;}
+#wgDirectory .menuDirectory { display: flex;flex-direction: column;margin-top: auto;margin-bottom: 97px;}
+#wgDirectory .menuDirectory .navgroup { display: flex;margin: 0px auto;}
+#wgDirectory .menuDirectory .navgroup .btnDirectorymenu { width: 240px;height: 48px;margin: 0px 36px;background: #FFFFFF;border: 4px solid rgba(187, 227, 250, 0.4);display: flex;align-items: center;}
+#wgDirectory .menuDirectory .navgroup .btnDirectorymenu .btntxt { margin: 0;border-left: 6px solid #BBE3FA;height: 100%;width: 100%;font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 20px;line-height: 36px;text-align: center;text-transform: capitalize;color: #222222;}
+#wgDirectory .searchBarBox { position: absolute;width: 100%;top: 1602px;box-shadow:inset 0px 7px 3px -3px rgb(209 184 179 / 20%);}
+#wgDirectory .searchBarBox .searchbar {  position: relative;bottom: 34px;width: 100%;display: flex;justify-content: center;}
+#wgDirectory .searchBarBox .searchbar .search { width: 864px;height: 66px;background: #FFFFFF;box-shadow: 4px 4px 16px rgb(209 184 179 / 20%);display: flex;align-items: center;}
+#wgDirectory .searchBarBox .searchbar .search .searchclass { display: flex;align-items: center;justify-content: center;width: 100%;}
+#wgDirectory .searchBarBox .searchbar .search .searchclass input { border: 0;background: url(../asset/search.png) no-repeat 7px 3px;font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 26px;line-height: 38px;color: #222222;padding-left: 55px;min-width: 140px;outline: none;}
+#wgDirectory .menuCategory { margin-top: 15px;}
+#wgDirectory .menuCategory #swiperCategory {}
+#wgDirectory .menuCategory #swiperCategory .swiper-wrapper {}
+#wgDirectory .menuCategory #swiperCategory .swiper-wrapper .swiper-slide {}
+#wgDirectory .menuCategory #swiperCategory .swiper-wrapper .swiper-slide .catrow { display: flex;justify-content: center;}
+#wgDirectory .menuCategory #swiperCategory .swiper-wrapper .swiper-slide .catrow .catcol { margin: 12px;}
+#wgDirectory .menuCategory #swiperCategory .swiper-wrapper .swiper-slide .catrow .catcol .catCard { width: 180px;height: 48px;border: 2px solid rgba(187, 227, 250, 0.4);background: #FFFFFF;display: flex;justify-content: center;align-items: center;}
+#wgDirectory .menuCategory #swiperCategory .swiper-wrapper .swiper-slide .catrow .catcol .catCard .cattxt { margin: 0;font-family: 'Noto';font-style: normal;font-weight: 300;font-size: 16px;line-height: 24px;text-align: center;color: #4D4D4F; overflow-wrap: anywhere;}
+#wgDirectory .menuLevel { margin: 32px 0px;}
+#wgDirectory .menuLevel .lvlgroup { display: flex;justify-content: center;align-items: center;}
+#wgDirectory .menuLevel .lvlgroup .lvlbox { border: 2px solid #BBE3FA;width: 64px;height: 64px;background: #FFFFFF;display: flex;justify-content: center;align-items: center;margin: 0px 12px;}
+#wgDirectory .menuLevel .lvlgroup .lvlbox .lvltxt { margin: 0;font-family: 'Noto';font-style: normal;font-weight: 400;font-size: 26px;line-height: 38px;color: #222222;}
+#wgDirectory .keyboard { margin-top: 105px;}
+#wgDirectory .keyboard .kyrow { display: flex;justify-content: center;align-items: center;}
+#wgDirectory .keyboard .kyrow .keybox { width: 64px;height: 64px;display: flex;justify-content: center;align-items: center;background: #FFFFFF;border: 2px solid #BBE3FA;border-radius: 50px;margin: 10px;}
+#wgDirectory .keyboard .kyrow .keybox .key { margin: 0;font-family: 'Noto';font-style: normal;font-weight: 500;font-size: 28px;line-height: 41px;text-align: center;text-transform: capitalize;color: #222222;}
+#wgDirectory .keyboard .kyrow .keyclear { width: 110px;background: #006EB8;border: 2px solid #006EB8;border-radius: 32px;}
+#wgDirectory .keyboard .kyrow .keyclear .keycleartxt { color: white;}
+#wgDirectory .keyboard .kyrow .keyspace { width: 560px;height: 60px;background: #ffffff;border: 2px solid #BBE3FA;border-radius: 32px;margin-top: 8px;display: flex;justify-content: center;align-items: center;}
+#wgDirectory .keyboard .kyrow .keyspacetxt { margin: 0;font-family: 'Noto';font-style: normal;font-weight: 500;font-size: 28px;line-height: 41px;text-align: center;text-transform: capitalize;color: #222222;}
+#wgDirectory .keyboard .closebtn { position: relative;bottom: 60px;display: flex;flex-direction: column;align-items: end;width: 39px; margin-left: 953px;}
+#wgDirectory .keyboard .closebtn .closebtnholder { display: flex;flex-direction: column; justify-content: center;align-items: center; margin-top: -5px;}
+#wgDirectory .keyboard .closebtn .closebtnholder .closebtntxt { margin: 0;font-family: 'Noto';font-style: normal;font-weight: 500;font-size: 16px;line-height: 24px;text-align: center;letter-spacing: 0.00686869px;color: #222222;}
+
+#wgDirectorymodal .modalbg { position: absolute;width: 100%;height: 100%;opacity: 0.7;background: black;z-index: 9;}
+#wgDirectorymodal .modalbox { width: 800px;height: 1300px;background: white;z-index: 10;border-left: 8px solid #006EB8;}
+#wgDirectorymodal .modalbox .modalimgholder { width: 100%;height: 600px; display: flex; justify-content: center;}
+#wgDirectorymodal .modalbox .modalimgholder img{ width:720px;height: 600px;}
+#wgDirectorymodal .modalbox .modaldetail { margin: 0px 36px;margin-top:20px;padding-bottom: 12px;border-bottom: 2px solid #BBE3FA;}
+#wgDirectorymodal .modalbox .modaldetail .modaltitle {display: flex;}
+#wgDirectorymodal .modalbox .modaldetail .modaltitle .shopnametxt { margin: 0;height: 76px;font-family: 'NotoBold';font-style: normal;font-weight: 700;font-size: 28px;line-height: 38px;display: table-cell;vertical-align: middle;color: #222222;width: 660px;}
+#wgDirectorymodal .modalbox .modaldetail .modalblog { display: flex; height: 125px;}
+#wgDirectorymodal .modalbox .modaldetail .modalblog .bleft {}
+#wgDirectorymodal .modalbox .modaldetail .modalblog .bleft .unitnumholder {}
+#wgDirectorymodal .modalbox .modaldetail .modalblog .bleft .unitnumholder .unitnumtxt { font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 24px;line-height: 36px;color: #000000;margin: 0;padding-top: 18px;padding-bottom: 20px;}
+#wgDirectorymodal .modalbox .modaldetail .modalblog .bleft .timeholder { display: flex;align-items: center;}
+#wgDirectorymodal .modalbox .modaldetail .modalblog .bleft .timeholder .timetxt { margin: 0;font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 18px;line-height: 27px;letter-spacing: -0.01em;color: #222222;padding-left: 8px;}
+#wgDirectorymodal .modalbox .modaldetail .modalblog .bleft .phoneholder { display: flex;align-items: center;padding-top: 6px;}
+#wgDirectorymodal .modalbox .modaldetail .modalblog .bleft .phoneholder .phonetxt { font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 18px;line-height: 27px;color: #222222;margin: 0;padding-left: 10px;}
+#wgDirectorymodal .modalbox .modaldetail .modalblog .bright { margin-left: auto;}
+#wgDirectorymodal .modalbox .modaldetail .modalblog .bright .qrcodebox {}
+#wgDirectorymodal .modalbox .modaldetail .modalblog .bright .qrcodebox .qrholder { width: 104px;height: 104px;border: 2px solid #BBE3FA; padding: 10px;}
+#wgDirectorymodal .modalbox .modaldetail .modalblog .bright .qrcodebox .qrtxt { font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 9px;line-height: 13px;text-align: center;text-transform: uppercase;color: #000000;margin: 0;padding-top: 8px;}
+#wgDirectorymodal .modalbox .modaldesc { padding-top: 24px;padding-bottom: 40px;margin: 0px 36px;}
+#wgDirectorymodal .modalbox .modaldesc .destxtarea { width: 100%;height: 300px;overflow-y: scroll; word-wrap: break-word;}
+#wgDirectorymodal .modalbox .modaldesc .destxtarea .desctxt { width: 97%;margin: 0;font-family: 'Noto';font-style: normal;font-weight: 400;font-size: 18px;line-height: 28px;text-transform: capitalize;color: #222222;text-align: justify;pointer-events: none;}
+#wgDirectorymodal .modalbox .modalbtn { display: flex;justify-content: center;}
+#wgDirectorymodal .modalbox .modalbtn .btnholder { display: flex;background: #FFFFFF;border: 4px solid rgba(187, 227, 250, 0.4);width: 240px;height: 48px;justify-content: center;align-items: center;}
+#wgDirectorymodal .modalbox .modalbtn .btnholder .btn { display: flex;width: 100%;height: 100%;align-items: center;justify-content: center;border-left: 6px solid #BBE3FA;}
+#wgDirectorymodal .modalbox .modalbtn .btnholder .btn .wayfindtxt { margin: 0;padding-left: 8px;font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 20px;line-height: 30px;color: #222222;}
+#wgDirectorymodal .modalbox .modalclose { position: relative;top: 6%;display: flex;justify-content: center;align-items: center;}
+
+#wgWayFindescliftPopup .modalbg {position: absolute; width: 100%; height:100% ;opacity:0.7; background: #000000; z-index:9;}
+#wgWayFindescliftPopup .modalbox .modaltitle {font-family: 'NotoBold'; font-size: 28px; margin-top: 88px; margin-bottom: 72px; padding-left: 156px; padding-right: 156px;}
+#wgWayFindescliftPopup .modalbox {background-color: #ffffff; width: 800px; height: 480px; z-index:100;}
+#wgWayFindescliftPopup .modalIcons {display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; gap: 88px;}
+#wgWayFindescliftPopup .modalbox .modalclose { position: relative;top: 88px;display: flex;justify-content: center;align-items: center;}
+
+#wgDining #SwiperDiningPage {min-height: 936px;}
+#wgDining #SwiperDiningPage #swiperDining {}
+#wgDining #SwiperDiningPage #swiperDining .swiper-wrapper { padding-bottom: 40px;}
+#wgDining #SwiperDiningPage #swiperDining .swiper-wrapper .swiper-slide { margin-top: 72px;}
+#wgDining #SwiperDiningPage #swiperDining .swiper-wrapper .swiper-slide .drow { display: flex;margin-left: 68px;margin-right: 68px;}
+#wgDining #SwiperDiningPage #swiperDining .swiper-wrapper .swiper-slide .drow .dcol { width: 424px;height: 150px;margin:28px 20px;}
+#wgDining #SwiperDiningPage #swiperDining .swiper-wrapper .swiper-slide .drow .dcol .dcard { width: 424px;height: 150px;background: white;border-left: 8px solid #006EB8;display: flex;}
+#wgDining #SwiperDiningPage #swiperDining .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardleft { width: 200px;height: 150px;}
+#wgDining #SwiperDiningPage #swiperDining .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardleft img {width: 200px; height: 150px;}
+#wgDining #SwiperDiningPage #swiperDining .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright { display: flex;flex-direction: column; flex: 0 0;}
+#wgDining #SwiperDiningPage #swiperDining .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright .shopnameholder { margin: auto 0px; overflow: scroll;}
+#wgDining #SwiperDiningPage #swiperDining .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright .shopnameholder::-webkit-scrollbar {display: none;}
+#wgDining #SwiperDiningPage #swiperDining .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright .shopnameholder .nametxt { font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 18px;line-height: 27px;letter-spacing: -0.01em;color: #000000;margin: 0;padding-left: 16px;word-wrap: break-word; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
+#wgDining #SwiperDiningPage #swiperDining .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright .shopdetail { display: flex;width: 100%;margin-top: auto;margin-bottom: auto;}
+#wgDining #SwiperDiningPage #swiperDining .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright .shopdetail .shopunitholder { width: 134px;padding-left: 16px; display: flex; flex-direction: column;} 
+#wgDining #SwiperDiningPage #swiperDining .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright .shopdetail .shopunitholder .unittxt { font-family: 'Noto';font-style: normal;font-weight: 400;font-size: 18px;line-height: 27px;letter-spacing: -0.01em;color: #000000;margin: 0;word-wrap: break-word; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
+#wgDining #SwiperDiningPage #swiperDining .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright .shopdetail .wayfindingbtn { width: 48px;height: 48px;padding-left: 10px;}
+#wgDining #SwiperDiningPage #swiperDining .swiper-wrapper .swiper-slide .drow .dcol .dcard .dcardright .shopdetail .wayfindingbtn .btnholder { width: 48px;height: 48px;background: #CAD401;display: flex;align-items: center;justify-content: center;border-radius: 50px;}
+#wgDining .menuDirectory { display: flex;flex-direction: column;margin-top: auto;margin-bottom: 97px;}
+#wgDining .menuDirectory .navgroup { display: flex;margin: 0px auto;}
+#wgDining .menuDirectory .navgroup .btnDirectorymenu { width: 240px;height: 48px;margin: 0px 36px;background: #FFFFFF;border: 4px solid rgba(187, 227, 250, 0.4);display: flex;align-items: center;}
+#wgDining .menuDirectory .navgroup .btnDirectorymenu .btntxt { margin: 0;border-left: 6px solid #BBE3FA;height: 100%;width: 100%;font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 20px;line-height: 36px;text-align: center;text-transform: capitalize;color: #222222;}
+#wgDining .searchBarBox { position: absolute;width: 100%;top: 1602px;box-shadow:inset 0px 7px 3px -3px rgb(209 184 179 / 20%);}
+#wgDining .searchBarBox .searchbar {  position: relative;bottom: 34px;width: 100%;display: flex;justify-content: center;}
+#wgDining .searchBarBox .searchbar .search { width: 864px;height: 66px;background: #FFFFFF;box-shadow: 4px 4px 16px rgb(209 184 179 / 20%);display: flex;align-items: center;}
+#wgDining .searchBarBox .searchbar .search .searchclass { display: flex;align-items: center;justify-content: center;width: 100%;}
+#wgDining .searchBarBox .searchbar .search .searchclass input { border: 0;background: url(../asset/search.png) no-repeat 7px 3px;font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 26px;line-height: 38px;color: #222222;padding-left: 55px;min-width: 140px;outline: none;}
+#wgDining .menuCategory { margin-top: 15px;}
+#wgDining .menuCategory #swiperSubCategory {}
+#wgDining .menuCategory #swiperSubCategory .swiper-wrapper {}
+#wgDining .menuCategory #swiperSubCategory .swiper-wrapper .swiper-slide {}
+#wgDining .menuCategory #swiperSubCategory .swiper-wrapper .swiper-slide .catrow { display: flex;justify-content: center;}
+#wgDining .menuCategory #swiperSubCategory .swiper-wrapper .swiper-slide .catrow .catcol { margin: 12px;}
+#wgDining .menuCategory #swiperSubCategory .swiper-wrapper .swiper-slide .catrow .catcol .catCard { width: 180px;height: 48px;border: 2px solid rgba(187, 227, 250, 0.4);background: #FFFFFF;display: flex;justify-content: center;align-items: center;}
+#wgDining .menuCategory #swiperSubCategory .swiper-wrapper .swiper-slide .catrow .catcol .catCard .cattxt { margin: 0;font-family: 'Noto';font-style: normal;font-weight: 300;font-size: 14px;line-height: 23px;text-align: center;color: #4D4D4F;word-wrap: break-word; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
+#wgDining .menuLevel { margin: 32px 0px;}
+#wgDining .menuLevel .lvlgroup { display: flex;justify-content: center;align-items: center;}
+#wgDining .menuLevel .lvlgroup .lvlbox { border: 2px solid #BBE3FA;width: 64px;height: 64px;background: #FFFFFF;display: flex;justify-content: center;align-items: center;margin: 0px 12px;}
+#wgDining .menuLevel .lvlgroup .lvlbox .lvltxt { margin: 0;font-family: 'Noto';font-style: normal;font-weight: 400;font-size: 26px;line-height: 38px;color: #222222;}
+#wgDining .keyboard { margin-top: 105px;}
+#wgDining .keyboard .kyrow { display: flex;justify-content: center;align-items: center;}
+#wgDining .keyboard .kyrow .keybox { width: 64px;height: 64px;display: flex;justify-content: center;align-items: center;background: #FFFFFF;border: 2px solid #BBE3FA;border-radius: 50px;margin: 10px;}
+#wgDining .keyboard .kyrow .keybox .key { margin: 0;font-family: 'Noto';font-style: normal;font-weight: 500;font-size: 28px;line-height: 41px;text-align: center;text-transform: capitalize;color: #222222;}
+#wgDining .keyboard .kyrow .keyclear { width: 110px;background: #006EB8;border: 2px solid #006EB8;border-radius: 32px;}
+#wgDining .keyboard .kyrow .keyclear .keycleartxt { color: white;}
+#wgDining .keyboard .kyrow .keyspace { width: 560px;height: 60px;background: #ffffff;border: 2px solid #BBE3FA;border-radius: 32px;margin-top: 8px;display: flex;justify-content: center;align-items: center;}
+#wgDining .keyboard .kyrow .keyspacetxt { margin: 0;font-family: 'Noto';font-style: normal;font-weight: 500;font-size: 28px;line-height: 41px;text-align: center;text-transform: capitalize;color: #222222;}
+#wgDining .keyboard .closebtn { position: relative;bottom: 60px;display: flex;flex-direction: column;align-items: end;margin-left: 953px; width: 39px; }
+#wgDining .keyboard .closebtn .closebtnholder { display: flex;flex-direction: column; justify-content: center;align-items: center; margin-top: -5px}
+#wgDining .keyboard .closebtn .closebtnholder .closebtntxt { margin: 0;font-family: 'Noto';font-style: normal;font-weight: 500;font-size: 16px;line-height: 24px;text-align: center;letter-spacing: 0.00686869px;color: #222222;}
+
+#wgDiningmodal .modalbg { position: absolute;width: 100%;height: 100%;opacity: 0.7;background: black;z-index: 9;}
+#wgDiningmodal .modalbox { width: 800px;height: 1300px;background: white;z-index: 10;border-left: 8px solid #006EB8;}
+#wgDiningmodal .modalbox .modalimgholder { width: 100%;height: 600px; display: flex; justify-content: center;}
+#wgDiningmodal .modalbox .modalimgholder img{ width:720px;height: 600px;}
+#wgDiningmodal .modalbox .modaldetail { margin: 0px 36px;margin-top:20px;padding-bottom: 12px;border-bottom: 2px solid #BBE3FA;}
+#wgDiningmodal .modalbox .modaldetail .modaltitle {}
+#wgDiningmodal .modalbox .modaldetail .modaltitle .shopnametxt { margin: 0;height: 76px;font-family: 'NotoBold';font-style: normal;font-weight: 700;font-size: 28px;line-height: 38px;display: table-cell;vertical-align: middle;color: #222222;}
+#wgDiningmodal .modalbox .modaldetail .modalblog { display: flex;}
+#wgDiningmodal .modalbox .modaldetail .modalblog .bleft {}
+#wgDiningmodal .modalbox .modaldetail .modalblog .bleft .unitnumholder {}
+#wgDiningmodal .modalbox .modaldetail .modalblog .bleft .unitnumholder .unitnumtxt { font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 24px;line-height: 36px;color: #000000;margin: 0;padding-top: 18px;padding-bottom: 20px;}
+#wgDiningmodal .modalbox .modaldetail .modalblog .bleft .timeholder { display: flex;align-items: center;}
+#wgDiningmodal .modalbox .modaldetail .modalblog .bleft .timeholder .timetxt { margin: 0;font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 18px;line-height: 27px;letter-spacing: -0.01em;color: #222222;padding-left: 8px;}
+#wgDiningmodal .modalbox .modaldetail .modalblog .bleft .phoneholder { display: flex;align-items: center;padding-top: 6px;}
+#wgDiningmodal .modalbox .modaldetail .modalblog .bleft .phoneholder .phonetxt { font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 18px;line-height: 27px;color: #222222;margin: 0;padding-left: 10px;}
+#wgDiningmodal .modalbox .modaldetail .modalblog .bright { margin-left: auto;}
+#wgDiningmodal .modalbox .modaldetail .modalblog .bright .qrcodebox {}
+#wgDiningmodal .modalbox .modaldetail .modalblog .bright .qrcodebox .qrholder { width: 104px;height: 104px;border: 2px solid #BBE3FA; padding: 10px;}
+#wgDiningmodal .modalbox .modaldetail .modalblog .bright .qrcodebox .qrtxt { font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 9px;line-height: 13px;text-align: center;text-transform: uppercase;color: #000000;margin: 0;padding-top: 8px;}
+#wgDiningmodal .modalbox .modaldesc { padding-top: 24px;padding-bottom: 40px;margin: 0px 36px;}
+#wgDiningmodal .modalbox .modaldesc .destxtarea { width: 100%;height: 300px;overflow-y: scroll;}
+#wgDiningmodal .modalbox .modaldesc .destxtarea .desctxt { width: 97%;margin: 0;font-family: 'Noto';font-style: normal;font-weight: 400;font-size: 18px;line-height: 28px;text-transform: capitalize;color: #222222;text-align: justify;}
+#wgDiningmodal .modalbox .modalbtn { display: flex;justify-content: center;}
+#wgDiningmodal .modalbox .modalbtn .btnholder { display: flex;background: #FFFFFF;border: 4px solid rgba(187, 227, 250, 0.4);width: 240px;height: 48px;justify-content: center;align-items: center;}
+#wgDiningmodal .modalbox .modalbtn .btnholder .btn { display: flex;width: 100%;height: 100%;align-items: center;justify-content: center;border-left: 6px solid #BBE3FA;}
+#wgDiningmodal .modalbox .modalbtn .btnholder .btn .wayfindtxt { margin: 0;padding-left: 8px;font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 20px;line-height: 30px;color: #222222;}
+#wgDiningmodal .modalbox .modalclose { position: relative;top: 6%;display: flex;justify-content: center;align-items: center;}
+
+
+/* happenings css */
+#wgHappenings #SwiperHappeningsPage {height: 1318px; width: 100%;}
+#wgHappenings #SwiperHappeningsPage #swiperHappenings {height: 1318px; width: 100%;}
+#wgHappenings #SwiperHappeningsPage #swiperHappenings .swiper-wrapper {margin-top: 98px;margin-left: 88px;width: 904px; height: auto;}
+#wgHappenings #SwiperHappeningsPage #swiperHappenings .swiper-wrapper .swiper-slide {width: 100%; height: 1106px;}
+#wgHappenings #SwiperHappeningsPage #swiperHappenings .swiper-wrapper .swiper-slide .row {width: 904px; column-gap: 38px; margin: 0px 0px 40px 0px; padding: 0;} /* padding: 40px 38px; margin-bottom: 40px; */
+#wgHappenings #SwiperHappeningsPage #swiperHappenings .swiper-wrapper .swiper-slide .row .col {width: 276px; height: 342px; margin: 0; padding: 0; flex: 0 0 auto;} /* margin-right: 32px !important;*/
+#wgHappenings #SwiperHappeningsPage #swiperHappenings .swiper-wrapper .swiper-slide .row .col .happening {width: 100%; height: 342px; background-color: #FFFFFF; border-left: 8px solid #C67AAE; } /* margin-right: 30px*/
+#wgHappenings #SwiperHappeningsPage #swiperHappenings .swiper-wrapper .swiper-slide .row .col .happening .happening_logo {height: 180px; width: 268px; margin: 0;}
+#wgHappenings #SwiperHappeningsPage #swiperHappenings .swiper-wrapper .swiper-slide .row .col .happening .happening_title {margin: 14px 14px 4px 14px; height: 72px; display: flex; align-items: center;}
+#wgHappenings #SwiperHappeningsPage #swiperHappenings .swiper-wrapper .swiper-slide .row .col .happening .happening_title .happening_name {font-family: 'NotoBold'; font-size: 16px; font-weight: 700;margin: 0; overflow: hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 3; /* number of lines to show */line-clamp: 3; -webkit-box-orient: vertical;}
+#wgHappenings #SwiperHappeningsPage #swiperHappenings .swiper-wrapper .swiper-slide .row .col .happening .happening_detail {margin: 14px 14px 14px 14px;}
+#wgHappenings #SwiperHappeningsPage #swiperHappenings .swiper-wrapper .swiper-slide .row .col .happening .happening_detail .happening_date, .happening_location {font-family: NotoMedium; font-size: 14px;}
+#wgHappenings #SwiperHappeningsPage #swiperHappenings .swiper-pagination {bottom: 48px};
+#wgHappenings .menuHappenings { display:flex;flex-direction: column;margin-top: auto;margin-bottom: 97px;}
+#wgHappenings .menuHappenings {display:flex;flex-direction: column;margin-top:auto;margin-bottom: 56px;}
+#wgHappenings .menuHappenings .navgroup {display:flex;margin: 0px auto;}
+#wgHappenings .menuHappenings .navgroup .btnHappeningsmenu {width: 240px;height: 48px;margin: 0px 36px;background: #FFFFFF;border: 4px solid rgba(187,227,250,0.4); display: flex; align-items: center;}
+#wgHappenings .menuHappenings .navgroup .btnHappeningsmenu .btntxt {margin: 0;height: 100%;width: 100%;font-family: 'Noto';font-style: normal; font-weight: 700;font-size: 20px;line-height: 36px; border-left: 6px solid #BBE3FA;text-align: center;text-transform: capitalize;color: #222222;}
+
+/* happening pop up css */ 
+#happeningpopup {position: absolute; width: 100%; height: 100%; z-index: 100;}
+#happeningpopup #hpnpopup_bg {position: absolute; width: 100%; height: 100%; background-color: #222222; opacity: 0.7;}
+#happeningpopup #hpnpopup_box {position: absolute; width: 808px; height: auto; margin: 300px 136px 264px 136px;}
+#happeningpopup #hpnpopup_box #hpnpopup_holder {width: 100%; height: auto; background-color: #FFFFFF; border-left: 8px solid #C67AAE; overflow-y: auto; overflow-x: hidden;}
+#happeningpopup #hpnpopup_box #hpnpopup_imgholder {width: 720px; height: 600px; margin: 0px 40px 0px 36px; text-align: center;}
+#happeningpopup #hpnpopup_box #hpnpopup_imgholder img {width: 100%; height: 100%; object-fit: contain;}
+#happeningpopup #hpnpopup_box #hpnpopup_text {width: 728px; height: 76px; margin:20px 36px 8px 36px;font-weight: 700; font-size: 28px; font-family: 'NotoBold'; font-style: normal; line-height: 38px; display: flex; align-items: center; text-transform: capitalize; color: #222222;}
+#happeningpopup #hpnpopup_box #hpnpopup_info {position: static; width: 728px; height: auto; margin-right: 64px; margin-left: 36px; padding-right: 28px; margin-bottom: 40px;}
+#happeningpopup #hpnpopup_box #hpnpopup_info #hpnpopup_row1 {display: flex; flex-direction: column; gap: 2px; height: 72px; margin-top: 66px; margin-bottom: 8px; justify-content: center;}
+#happeningpopup #hpnpopup_box #hpnpopup_info #hpnpopup_row1 .hpnpopup_span {padding-left: 8px; font-size: 18px; font-family: 'NotoBold'; font-weight: 700;}
+#happeningpopup #hpnpopup_box #hpnpopup_info #hpnpopup_row1 #hpnpopup_date {padding: 4px;}
+#happeningpopup #hpnpopup_box #hpnpopup_info #hpnpopup_row1 #hpnpopup_location {padding: 4px;}
+#happeningpopup #hpnpopup_box #hpnpopup_info #hpnpopup_row2 {position: fixed; height: 138px; width: 100px; right: 172px; top: 1004px; left: 808px; bottom: 778px;}
+#happeningpopup #hpnpopup_box #hpnpopup_info #hpnpopup_row2 #hpnpopup_qrcode {font-size: 9px; font-weight: 700; text-align: center; text-transform: uppercase;}
+#happeningpopup #hpnpopup_box #hpnpopup_info #hpnpopup_row2 #hpnpopup_qrcode #hpnpopup_qr {border: 2px solid #BBE3FA; margin-bottom: 8px;}
+#happeningpopup #hpnpopup_box #hpnpopup_info #hpnpopup_row2 #hpnpopup_qrcode #hpnpopup_qr img {width: 95px; height: 100px; object-fit: contain; padding: 10px;}
+#happeningpopup #hpnpopup_box #hpnpopup_info #hpnpopup_row3 {text-transform: capitalize;}
+#happeningpopup #hpnpopup_box #hpnpopup_info #hpnpopup_row3 #hpnpopup_desc{font-size: 18px; font-weight: 400; color: #222222; font-family: 'Noto'; width: 97%;pointer-events: none;}
+#happeningpopup #hpnpopup_box #hpnpopup_info #hpnpopup_row3 #hpnpopup_descholder {height: 300px; overflow-y: scroll;}
+#happeningpopup #hpnpopup_box #hpnpopup_wayfindingbtn {position: static; width: 240px; height: 48px;border: 4px solid rgba(187, 227, 250, 0.4); margin-left: 280px; margin-bottom: 36px;}
+#happeningpopup #hpnpopup_box #hpnpopup_wayfindingbtn #hpnpopup_wfbtnholder {display: flex; height: 100%;justify-content: center; align-items: center; padding-top: 9px; padding-bottom: 9px;border-left: 6px solid #BBE3FA;}
+#happeningpopup #hpnpopup_box #hpnpopup_wayfindingbtn #wayfindlogo {padding-right: 8px;}
+#happeningpopup #hpnpopup_box #hpnpopup_wayfindingbtn #wayfindtext {font-size: 20px; font-weight: 700; font-family: 'NotoBold';}
+#happeningpopup #hpnpopup_box #hpnpopup_cross {position: static; margin-top: 24px; margin-left: 392px;}
+
+/* transport css */
+#wgTransport .swiperbox {width:800px; height: 1082px;background-color: #FFFFFF; margin:98px 136px 73px 144px; border-left: 8px solid #006EB8;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);}
+#wgTransport .menuTransport {display:flex;flex-direction: column;margin-top:auto;margin-bottom: 56px;}
+#wgTransport .menuTransport .navgroup {display:flex;margin: 0px auto;}
+#wgTransport .menuTransport .navgroup .btnTransportmenu {width: 240px;height: 48px;margin: 0px 36px;background: #FFFFFF;border: 4px solid rgba(187,227,250,0.4); display: flex; align-items: center;}
+#wgTransport .menuTransport .navgroup .btnTransportmenu .btntxt {margin: 0;height: 100%;width: 100%;font-family: 'Noto';font-style: normal; font-weight: 700;font-size: 20px;line-height: 36px;text-align: center;text-transform: capitalize;color: #222222; border-left: 6px solid #BBE3FA;}
+#wgTransport .headingholder {height: 153px; display: flex; align-items: center; justify-content: center;}
+#wgTransport .heading {display:flex;height: 53px; gap: 16px; text-align: center;}
+#wgTransport .headingtxt {font-family: 'NotoBold';font-style: normal;font-size: 36px;font-weight: 700; color: #222222;}
+#wgTransport .MapPreview img{width: auto;height: auto; margin-left: 36px;margin-right: 36px;}
+#wgTransport .Stops {width: auto; height:303px; margin: 40px 36px}
+
+#wgTransport .carparkholder {width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 51px;}
+#wgTransport .carparkholder .maintitleholder {width: 627px; height: 20px; margin-bottom: 5px;}
+#wgTransport .weekdayholder {width: auto; height: 343px; display: flex; flex-direction: row; gap: 23px;}
+#wgTransport .weekdayholder .monthursdaycol{width: 680px; height: 343px; border: 1px solid #A3CEE9;}
+#wgTransport .weekdayholder .monthursdaycol p, #skTransport .weekdayholder .fridaycol p , #skTransport .weekendholder .weekendcol p {font-size: 15px; font-family: OpenSans; margin-bottom: 0.5rem !important; line-height: 18px;}
+#wgTransport .mainheader {height: 92px; background: #0077C1; display: flex; justify-content: center; align-items: center;}
+#wgTransport .col-header {margin-top: 30px; padding-left: 20px;}
+#wgTransport .col-body {margin-left: 130px; padding-top: 30px; width: 367px;}
+#wgTransport .weekendcol { width: 680px; height: 239px; border: 1px solid #A3CEE9;}
+#wgTransport .priceGst p, #skTransport .carparkholder .maintitleholder p {font-family: Noto; font-size: 17px;}
+
+
+/* concierge css */
+#wgConcierge {padding-top: 98px;}
+#wgConcierge #infoContainer {box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);width: 808px; height: 1082px; margin: 0px 136px 242px 144px; background-color: #FFFFFF; border-left: 8px solid #006EB8; padding-top: 88px;}
+#wgConcierge #infoContainer .logoholder {width: 60px; height: 60px; margin-right: 36px;}
+#wgConcierge #infoContainer .infoRow {display: flex;margin-bottom: 40px; padding-left: 50px; height: 103px; width: 100%; align-items: center; } /*height: 103px;*/
+#wgConcierge #infoContainer .infoRow .text {width: 374px; height: 100%; display: flex; flex-direction: column; justify-content: center;}
+#wgConcierge #infoContainer .infoRow .text h5 {font-family: NotoBold; font-weight: 700; font-size: 26px; line-height: 29.96px; letter-spacing: 0.0274747px; color: #000000;}
+#wgConcierge #infoContainer .infoRow .text p {font-family: Noto; font-weight: 400; font-size: 22px; line-height: 29.96px; letter-spacing: 0.0206061px; color: #000000; margin-bottom: 0;}
+#wgConcierge #infoContainer .infoRow .wayfindingbtn {padding-left: 186px;}
+#wgConcierge #infoContainer .infoRow .wayfindingbtn .btnholder {border-radius: 50%; background-color: #CAD401;}
+
+/* #wgConcierge #SwiperConciergePage {height: 1130px;}
+#wgConcierge #swiperConcierge {width: 100%; height: 100%;padding-left: 136px;}
+#wgConcierge #swiperConicerge .swiper-wrapper {height: 1082px;}
+#wgConcierge #swiperConcierge .conciergeInfo {width:800px; height: 1082px; border-left: 8px solid #006EB8;} */
+
+.navmenu { width:100%; height:16.5625%;background: #F5F5F5;box-shadow: 0px -4px 16px rgb(209 184 179 / 20%);}
+.navmenu .followtab { padding: 52px 0px 0px 34px;display: flex;}
+.navmenu .followtab .instalogo { padding-right: 8px;}   
+.navmenu .followtab .fblogo { padding-right: 8px;}
+.navmenu .followtab .followtext { margin: 0;font-family: 'Noto';font-style: normal;font-weight: 700;font-size: 20px;line-height: 28px;display: flex;align-items: center;color: #222222;}
+.navmenu .navgroup { display: flex;padding: 28px 22px 0px 22px;}
+.navmenu .navgroup .navbox { padding: 0px 12px;}
+.navmenu .navgroup .navbox .navbtn { position: relative;width: 124px;height: 124px;display: flex;justify-content: center;align-items: center;}
+.navmenu .navgroup .navbox .navbtn .navborder { position: absolute;}
+.navmenu .navgroup .navbox .navbtn .navlogo { z-index: 10;}
+.navmenu .navgroup .navbox .navtext { font-family: 'NotoBold';font-style: normal;font-weight: 700;font-size: 21px;line-height: 36px;letter-spacing: -0.01em;text-transform: capitalize;color: #000000;margin: 0;text-align: center;margin-top: 16px;}
+
+#wgHome #swiperHome .itemHome .descriptionholder::-webkit-scrollbar,
+#happeningpopup #hpnpopup_box #hpnpopup_info #hpnpopup_row3 #hpnpopup_descholder::-webkit-scrollbar,
+#wgDirectorymodal .modalbox .modaldesc .destxtarea::-webkit-scrollbar{
+    width: 10px;            /* width of the entire scrollbar */
+}
+
+#wgHome #swiperHome .itemHome .descriptionholder::-webkit-scrollbar-track,
+#happeningpopup #hpnpopup_box #hpnpopup_info #hpnpopup_row3 #hpnpopup_descholder::-webkit-scrollbar-track,
+#wgDirectorymodal .modalbox .modaldesc .destxtarea::-webkit-scrollbar-track {
+    background: transparent;    
+}
+
+#wgHome #swiperHome .itemHome .descriptionholder::-webkit-scrollbar-thumb,
+#happeningpopup #hpnpopup_box #hpnpopup_info #hpnpopup_row3 #hpnpopup_descholder::-webkit-scrollbar-thumb,
+#wgDirectorymodal .modalbox .modaldesc .destxtarea::-webkit-scrollbar-thumb {
+    background-color: #CDCDCD;    /* color of the scroll thumb */
+    border-radius: 20px;   
+}
