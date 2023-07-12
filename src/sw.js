@@ -46,7 +46,7 @@ const addResourcesToCache = async (resources) => {
 
 self.addEventListener('install', event => {
     // console.log('install');
-    // self.skipWaiting();
+    self.skipWaiting();
     event.waitUntil(
         caches.open('cache_name').then(cache => {
             return cache.addAll(CACHE_ASSETS)
