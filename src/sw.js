@@ -49,7 +49,7 @@ self.addEventListener('install', event => {
     // self.skipWaiting();
     event.waitUntil(
         caches.open('cache_name').then(cache => {
-            return cache.allAdd(CACHE_ASSETS)
+            return cache.addAll(CACHE_ASSETS)
         })
         // addResourcesToCache(CACHE_ASSETS)
     );
