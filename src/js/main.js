@@ -3954,9 +3954,16 @@ function loadImages() {
         tenantImageArray = data.store_list;
         happeningImageArray = data.happening_list;
     }).then(() => {
+        storeimginCache(tenantImageArray);
         loadJson();
     })
-    
+}
+
+
+function storeimginCache(array) {
+    for(var i=0; i<array.length;i++) {
+        localStorage.setItem(i, `../commonfile/store/${array[i].file_name}`);
+    }
 }
 
 function loadJson() {
@@ -3979,3 +3986,6 @@ function loadJson() {
         loadjsontimeout = setTimeout(initialSetting(), 4000);
     });
 }
+
+// get worker
+var myserviceworker = new Worker('sw.js')
