@@ -48,7 +48,7 @@ self.addEventListener('install', event => {
     // console.log('install');
     self.skipWaiting();
     event.waitUntil(
-        caches.open('cache_name').then(cache => {
+        caches.open('CACHE_NAME').then(cache => {
             return cache.addAll(CACHE_ASSETS)
         })
         // addResourcesToCache(CACHE_ASSETS)
@@ -60,6 +60,8 @@ self.addEventListener('activate', event => {
 })
 
 self.addEventListener('fetch', event => {
+    console.log('fetching');
+    console.log(evvent.request);
     event.respondWith(
         caches.match(event.request).then(response => {
             return response || fetch(event.request);
