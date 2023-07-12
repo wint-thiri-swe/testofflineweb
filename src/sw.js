@@ -39,7 +39,7 @@ const getcontent = async () => {
 
 const addResourcesToCache = async (resources) => {
     resources = await getcontent();
-    const cache = await caches.open(CACHE_NAME);
+    const cache = await caches.open("CACHE_NAME");
     await cache.addAll(resources);
   };
 
@@ -48,7 +48,10 @@ self.addEventListener('install', event => {
     // console.log('install');
     // self.skipWaiting();
     event.waitUntil(
-        addResourcesToCache(CACHE_ASSETS)
+        caches.open('cache_name').then(cache => {
+            return cache.allAdd(CACHE_ASSETS)
+        })
+        // addResourcesToCache(CACHE_ASSETS)
     );
 });
 
