@@ -26,7 +26,7 @@ var CACHE_ASSETS = [
 // read file
 const getcontent = async () => {
     var storeimage;
-    return fetch("../commonfile/data/kiosk_data.json")
+    return fetch("https://github.com/wint-thiri-swe/testofflineweb/blob/main/commonfile/data/kiosk_data.json")
     .then(res => res.json())
     .then(data => {
       storeimage = data.store_list;
