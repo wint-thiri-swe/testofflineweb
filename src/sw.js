@@ -61,7 +61,6 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
     console.log('fetching');
-    console.log(evvent.request);
     event.respondWith(
         caches.match(event.request).then(response => {
             return response;
