@@ -20,7 +20,8 @@ var CACHE_ASSETS = [
     './js/jquery-3.5.1.min.js',
     './js/swiper-bundle.min.js',
     './js/main.js',
-    './MyLoader.js'
+    './MyLoader.js',
+    './asset/westgatelogo.png'
 ];
 
 // read file
@@ -48,10 +49,10 @@ self.addEventListener('install', event => {
     // console.log('install');
     self.skipWaiting();
     event.waitUntil(
-        caches.open('CACHE_NAME').then(cache => {
-            return cache.addAll(CACHE_ASSETS)
-        })
-        // addResourcesToCache(CACHE_ASSETS)
+        // caches.open('CACHE_NAME').then(cache => {
+        //     return cache.addAll(CACHE_ASSETS)
+        // })
+        addResourcesToCache(CACHE_ASSETS)
     );
 });
 
